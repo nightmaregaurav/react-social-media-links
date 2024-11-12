@@ -3,8 +3,7 @@ import SocialMedia, {SocialMediaIcons} from "./SocialMedia";
 
 interface SocialLinksProps {
   socialLinks: SocialLink[];
-  iconWidth: number;
-  iconHeight: number;
+  iconSize: number;
 }
 
 interface SocialLink {
@@ -16,8 +15,7 @@ const getIcon = (
   index: number,
   hoveredIconIndex: number | undefined,
   socialLink: SocialLink,
-  x: number,
-  y: number
+  iconSize: number,
 ) => {
   const NormalIcon = SocialMediaIcons[socialLink.media].normal;
   const HoverIcon = SocialMediaIcons[socialLink.media].hover;
@@ -31,16 +29,16 @@ const getIcon = (
 
   return <>
     <NormalIcon
-      width={x}
-      height={y}
+      width={iconSize}
+      height={iconSize}
       style={{
         ...style,
         opacity: hoveredIconIndex === index ? 0 : 1,
       }}
     />
     <HoverIcon
-      width={x}
-      height={y}
+      width={iconSize}
+      height={iconSize}
       style={{
         ...style,
         opacity: hoveredIconIndex === index ? 1 : 0,
@@ -52,9 +50,7 @@ const getIcon = (
 const SocialLinks = (
   {
     socialLinks,
-    iconWidth,
-    iconHeight,
-
+    iconSize,
   }: SocialLinksProps
 ) => {
   const [hoveredIconIndex, setHoveredIconIndex] = useState<number>();
@@ -74,12 +70,12 @@ const SocialLinks = (
           <a
             style={{
               position: "relative",
-              minHeight: iconHeight,
-              height: iconHeight,
-              maxHeight: iconHeight,
-              minWidth: iconWidth,
-              width: iconWidth,
-              maxWidth: iconWidth,
+              minHeight: iconSize,
+              height: iconSize,
+              maxHeight: iconSize,
+              minWidth: iconSize,
+              width: iconSize,
+              maxWidth: iconSize,
             }}
             key={index}
             onMouseEnter={() => setHoveredIconIndex(index)}
@@ -88,7 +84,7 @@ const SocialLinks = (
             target={"_blank"}
             rel={"noreferrer"}
           >
-            {getIcon(index, hoveredIconIndex, socialLink, iconWidth, iconHeight)}
+            {getIcon(index, hoveredIconIndex, socialLink, iconSize)}
           </a>
         )
       }
