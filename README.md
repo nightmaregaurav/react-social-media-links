@@ -22,8 +22,7 @@ const Index = () => {
   return (
     <SocialLinks
       socialLinks={[{media: SocialMedia.GitHub, link: "https://www.github.com/nightmaregaurav"}]}
-      iconHeight={25}
-      iconWidth={25}
+      iconSize={25}
     />
   );
 };
