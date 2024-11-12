@@ -5,6 +5,8 @@
 ### Description
 React Social Media Links is a simple and easy to use react component that provides a way to list social media icons hyperlinked to the respective social media profiles.
 
+### Demo: [CodeSandbox](https://codesandbox.io/p/sandbox/2smz9c)
+
 ### Installation
 Install react-social-media-links
 ```bash
@@ -20,8 +22,7 @@ const Index = () => {
   return (
     <SocialLinks
       socialLinks={[{media: SocialMedia.GitHub, link: "https://www.github.com/nightmaregaurav"}]}
-      iconHeight={25}
-      iconWidth={25}
+      iconSize={25}
     />
   );
 };
