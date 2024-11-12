@@ -14,8 +14,7 @@ npm install @nightmaregaurav/react-social-media-links
 ### Usage
 ```typescript
 import React from 'react';
-import GoToTopButton from "@nightmaregaurav/react-social-media-links";
-import SocialMedia from "@nightmaregaurav/react-social-media-links/dist/types/SocialMedia";
+import SocialLinks, {SocialMedia} from "@nightmaregaurav/react-social-media-links";
 
 const Index = () => {
   return (
