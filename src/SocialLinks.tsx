@@ -6,7 +6,7 @@ interface SocialLinksProps {
   iconSize: number;
 }
 
-interface SocialLink {
+export interface SocialLink {
   media: SocialMedia;
   link: string;
 }
